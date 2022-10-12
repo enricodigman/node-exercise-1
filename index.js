@@ -15,7 +15,7 @@ if (argument[0] === undefined || argument[1] === undefined) {
         fs.readFile(argument[0].toString(), 'utf8', (error, data) => {
           const line = data.split(/\n/)
           for (let i = 0; i < line.length; i += 1) {
-            result[i] = `${i + 1} : ${line[i]}`
+            result[i] = `${i + 1}: ${line[i]}`
           }
           fs.writeFileSync(argument[1].toString(), result.join('\n'), {
             encoding: 'utf8',
@@ -30,7 +30,7 @@ if (argument[0] === undefined || argument[1] === undefined) {
       fs.readFile(argument[0].toString(), 'utf8', (error, data) => {
         const line = data.split(/\n/)
         for (let i = 0; i < line.length; i += 1) {
-          result[i] = `${i + 1} : ${line[i]}`
+          result[i] = `${i + 1}: ${line[i]}`
         }
         fs.writeFileSync(argument[1].toString(), result.join('\n'), {
           encoding: 'utf8',
