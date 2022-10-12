@@ -41,35 +41,3 @@ if (argument[0] === undefined || argument[1] === undefined) {
     }
   })
 }
-
-// if (argument[0] === undefined || argument[1] === undefined) {
-//   console.error('Missing arguments')
-// } else {
-//   fs.readFile(argument[1].toString(), 'utf8', (err, data) => {
-//     if (err) {
-//       console.error('File does not exist')
-//       return
-//     }
-//     fs.access(argument[1].toString(), fs.constants.F_OK || fs.constants.W_OK, (fileerror) => {
-//       const line = data.split(/\n/)
-//       if (argument[2] === undefined || argument[2].toString() === '-n') {
-//         fs.writeFile(argument[1].toString(), line.toString(), (error) => {
-//           if (error) {
-//             return console.log(error)
-//           }
-//           return console.log('The file was saved!')
-//         })
-//       } else if (argument[2].toString() === '-y') {
-//         fs.writeFile(argument[1].toString(), line.toString(), (error) => {
-//           if (error) {
-//             return console.log(error)
-//           }
-//           return console.log('The file was saved!')
-//         })
-//         // console.log('The file will not be overwritten')
-//       } else {
-//         console.error('Third argument is only limited to only -y and -n.')
-//       }
-//     })
-//   })
-// }
