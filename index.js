@@ -4,10 +4,13 @@ const [,, contentFile, outputFile, option] = process.argv
 
 const result = []
 if (contentFile === undefined || outputFile === undefined) {
-  console.log('Missing arguments')
-  process.exit(1)
-}
-if (fs.existsSync(outputFile)) {
+  process.stdin.on('data', (data) => {
+    const line = data.toString().split('\n')
+    for (let i = 0; i < line.length; i += 1) {
+      console.log(`${i + 1}: ${line[i]}`)
+    }
+  })
+} else if (fs.existsSync(outputFile)) {
   if (option !== '-y' && option !== '-n' && option !== undefined) {
     console.log('Third argument is only limited to -y and -n.')
     process.exit(1)
